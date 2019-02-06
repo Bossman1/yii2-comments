@@ -71,6 +71,7 @@ class CommentModel extends ActiveRecord
             [['entityId', 'parentId', 'status', 'level'], 'integer'],
             [['user_name'], 'string'],
             ['user_name', 'required', 'message' => Yii::t('yii2mod.comments', 'User name cannot be blank.')],
+            ['reCaptcha', \himiklab\yii2\recaptcha\ReCaptchaValidator::class, 'secret' => '6Lepm48UAAAAALBUcFLijR5s-4NZpOg7AKPqBDU7']
         ];
     }
 
@@ -150,6 +151,7 @@ class CommentModel extends ActiveRecord
             'createdAt' => Yii::t('yii2mod.comments', 'Created date'),
             'updatedAt' => Yii::t('yii2mod.comments', 'Updated date'),
             'user_name' => Yii::t('yii2mod.comments', 'User name'),
+            'reCaptcha' => Yii::t('yii2mod.comments', 'reCaptcha'),
         ];
     }
 
