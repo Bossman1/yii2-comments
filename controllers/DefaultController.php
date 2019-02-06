@@ -26,6 +26,7 @@ class DefaultController extends Controller
     use ModuleTrait;
 
     /**
+     *
      * Event is triggered before creating a new comment.
      * Triggered with yii2mod\comments\events\CommentEvent
      */

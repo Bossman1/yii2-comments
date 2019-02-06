@@ -104,6 +104,7 @@ class Comment extends Widget
     {
         parent::init();
 
+
         if (empty($this->model)) {
             throw new InvalidConfigException(Yii::t('yii2mod.comments', 'The "model" property must be set.'));
         }

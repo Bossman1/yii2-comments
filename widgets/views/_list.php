@@ -10,6 +10,7 @@ use yii2mod\editable\Editable;
 ?>
 <li class="comment" id="comment-<?php echo $model->id; ?>">
 
+
     <div class="comment-content" data-comment-content-id="<?php echo $model->id ?>">
         <div class="comment-author-avatar">
             <?php echo Html::img($model->getAvatar(), ['alt' => $model->getAuthorName()]); ?>

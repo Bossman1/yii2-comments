@@ -285,6 +285,7 @@ class CommentModel extends ActiveRecord
         return $this->children;
     }
 
+
     /**
      * @param $value
      */

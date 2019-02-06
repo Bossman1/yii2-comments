@@ -18,6 +18,7 @@ use yii\widgets\ActiveForm;
         'action' => Url::to(['/comment/default/create', 'entity' => $encryptedEntity]),
         'validateOnChange' => false,
         'validateOnBlur' => false,
+
     ]); ?>
 
     <?php echo $form->field($commentModel, 'user_name', ['template' => '{input}{error}'])->textInput(['placeholder' => Yii::t('yii2mod.comments', 'Your name')]); ?>
