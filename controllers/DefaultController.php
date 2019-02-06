@@ -104,6 +104,8 @@ class DefaultController extends Controller
      */
     public function actionCreate($entity)
     {
+
+
         /* @var $commentModel CommentModel */
         $commentModel = Yii::createObject($this->getModule()->commentModelClass);
         $event = Yii::createObject(['class' => CommentEvent::class, 'commentModel' => $commentModel]);

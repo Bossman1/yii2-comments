@@ -9,6 +9,7 @@ use yii2mod\editable\Editable;
 /* @var $maxLevel null|integer comments max level */
 ?>
 <li class="comment" id="comment-<?php echo $model->id; ?>">
+
     <div class="comment-content" data-comment-content-id="<?php echo $model->id ?>">
         <div class="comment-author-avatar">
             <?php echo Html::img($model->getAvatar(), ['alt' => $model->getAuthorName()]); ?>
@@ -23,7 +24,7 @@ use yii2mod\editable\Editable;
                 <?php endif; ?>
             </div>
             <div class="comment-author-name">
-                <span><?php echo $model->getAuthorName(); ?></span>
+                <span><?php echo $model->getTest(); ?></span>
                 <?php echo Html::a($model->getPostedDate(), $model->getAnchorUrl(), ['class' => 'comment-date']); ?>
             </div>
             <div class="comment-body">

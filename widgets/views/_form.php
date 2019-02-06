@@ -20,8 +20,11 @@ use yii\widgets\ActiveForm;
         'validateOnBlur' => false,
     ]); ?>
 
+    <?php echo $form->field($commentModel, 'user_name', ['template' => '{input}{error}'])->textInput(['placeholder' => Yii::t('yii2mod.comments', 'Your name')]); ?>
     <?php echo $form->field($commentModel, 'content', ['template' => '{input}{error}'])->textarea(['placeholder' => Yii::t('yii2mod.comments', 'Add a comment...'), 'rows' => 4, 'data' => ['comment' => 'content']]) ?>
     <?php echo $form->field($commentModel, 'parentId', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'parent-id']]); ?>
+    <?php echo $form->field($commentModel, 'parentId', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'parent-id']]); ?>
+
     <div class="comment-box-partial">
         <div class="button-container show">
             <?php echo Html::a(Yii::t('yii2mod.comments', 'Click here to cancel reply.'), '#', ['id' => 'cancel-reply', 'class' => 'pull-right', 'data' => ['action' => 'cancel-reply']]); ?>
