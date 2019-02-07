@@ -71,7 +71,7 @@ class CommentModel extends ActiveRecord
             [['entityId', 'parentId', 'status', 'level'], 'integer'],
             [['user_name'], 'string'],
             ['user_name', 'required', 'message' => Yii::t('yii2mod.comments', 'User name cannot be blank.')],
-            ['reCaptcha', \himiklab\yii2\recaptcha\ReCaptchaValidator::class, 'secret' => '6Lepm48UAAAAALBUcFLijR5s-4NZpOg7AKPqBDU7']
+            ['reCaptcha', \himiklab\yii2\recaptcha\ReCaptchaValidator::class, 'secret' => '6LfK048UAAAAAMEAqfcBOxbZaqE_JDjL-vlUMsis']
         ];
     }
 
