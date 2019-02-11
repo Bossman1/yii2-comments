@@ -21,9 +21,10 @@ use yii\widgets\ActiveForm;
 
     ]); ?>
 
+
+    <?php echo $form->field($commentModel, 'user_name', ['template' => '{input}{error}'])->textInput(['placeholder' => Yii::t('yii2mod.comments', 'Your name'), 'class' => 'comment-user-name']); ?>
+    <?php echo $form->field($commentModel, 'content', ['template' => '{input}{error}'])->textarea(['placeholder' => Yii::t('yii2mod.comments', 'Add a comment...'), 'rows' => 4, 'data' => ['comment' => 'content'], 'class' => 'comment-textarea']) ?>
     <?= $form->field($commentModel, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::class) ?>
-    <?php echo $form->field($commentModel, 'user_name', ['template' => '{input}{error}'])->textInput(['placeholder' => Yii::t('yii2mod.comments', 'Your name')]); ?>
-    <?php echo $form->field($commentModel, 'content', ['template' => '{input}{error}'])->textarea(['placeholder' => Yii::t('yii2mod.comments', 'Add a comment...'), 'rows' => 4, 'data' => ['comment' => 'content']]) ?>
     <?php echo $form->field($commentModel, 'parentId', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'parent-id']]); ?>
     <?php echo $form->field($commentModel, 'parentId', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'parent-id']]); ?>
 
