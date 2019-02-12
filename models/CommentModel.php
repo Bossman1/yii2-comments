@@ -69,9 +69,6 @@ class CommentModel extends ActiveRecord
             ['level', 'default', 'value' => 1],
             ['parentId', 'validateParentID'],
             [['entityId', 'parentId', 'status', 'level'], 'integer'],
-            [['user_name'], 'string'],
-            ['user_name', 'required', 'message' => Yii::t('yii2mod.comments', 'User name cannot be blank.')],
-            ['reCaptcha', \himiklab\yii2\recaptcha\ReCaptchaValidator::class, 'secret' => '6LfK048UAAAAAMEAqfcBOxbZaqE_JDjL-vlUMsis']
         ];
     }
 
@@ -102,7 +99,11 @@ class CommentModel extends ActiveRecord
     public function behaviors()
     {
         return [
-
+            'blameable' => [
+                'class' => BlameableBehavior::class,
+                'createdByAttribute' => 'createdBy',
+                'updatedByAttribute' => 'updatedBy',
+            ],
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'createdAtAttribute' => 'createdAt',
@@ -150,8 +151,6 @@ class CommentModel extends ActiveRecord
             'url' => Yii::t('yii2mod.comments', 'Url'),
             'createdAt' => Yii::t('yii2mod.comments', 'Created date'),
             'updatedAt' => Yii::t('yii2mod.comments', 'Updated date'),
-            'user_name' => Yii::t('yii2mod.comments', 'User name'),
-            'reCaptcha' => Yii::t('yii2mod.comments', 'reCaptcha'),
         ];
     }
 
@@ -287,19 +286,12 @@ class CommentModel extends ActiveRecord
         return $this->children;
     }
 
-
     /**
      * @param $value
      */
     public function setChildren($value)
     {
         $this->children = $value;
-    }
-
-
-    public function getTest(){
-       $query = static::find()->select('user_name')->where(['id'=>$this->id])->one();
-       return $query['user_name'];
     }
 
     /**

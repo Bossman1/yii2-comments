@@ -6,7 +6,6 @@
 .comments .comments-list {
     list-style: none;
     padding: 0;
-    margin-top: 48px;
 }
 
 .comments .comment-author-avatar {
@@ -94,8 +93,7 @@
     background: url("../images/title-pattern.png");
     height: 5px;
     overflow: hidden;
-    top: 8px;
-    position:relative;
+    margin-top: 8px;
 }
 
 .title-block .h3-body-title {
@@ -196,20 +194,4 @@
 #cancel-reply:hover {
     text-decoration: none;
     color: #187BA7;
-}
-
-
-.comment-user-name{
-    paddin:10px;
-    display: block;
-    width:300px;
-    margin:0 0 20px 0 !important;
-    border-radius:3px;
-}
-
-.comment-textarea{
-    border-radius:3px !important;
-    padding:5px !important;
-    margin:10px 0 20px 0;
-    display:block;
 }

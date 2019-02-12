@@ -12,7 +12,7 @@ use Yii;
 class Module extends \yii\base\Module
 {
     /**
-     * @var string the class name of the [[identity]] object test
+     * @var string the class name of the [[identity]] object
      */
     public $userIdentityClass;
 

@@ -41,7 +41,7 @@ class ManageController extends Controller
         'rules' => [
             [
                 'allow' => true,
-                'roles' => ['admin'],
+                'roles' => ['administrator'],
             ],
         ],
     ];
@@ -71,7 +71,6 @@ class ManageController extends Controller
      */
     public function actionIndex()
     {
-
         $searchModel = Yii::createObject($this->searchClass);
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $commentModel = $this->getModule()->commentModelClass;

@@ -26,7 +26,6 @@ class DefaultController extends Controller
     use ModuleTrait;
 
     /**
-     *
      * Event is triggered before creating a new comment.
      * Triggered with yii2mod\comments\events\CommentEvent
      */
@@ -75,7 +74,7 @@ class DefaultController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['admin'],
+                        'roles' => ['administrator'],
                     ],
                 ],
             ],
@@ -105,8 +104,6 @@ class DefaultController extends Controller
      */
     public function actionCreate($entity)
     {
-
-
         /* @var $commentModel CommentModel */
         $commentModel = Yii::createObject($this->getModule()->commentModelClass);
         $event = Yii::createObject(['class' => CommentEvent::class, 'commentModel' => $commentModel]);

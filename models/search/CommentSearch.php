@@ -13,7 +13,6 @@ use yii2mod\comments\models\CommentModel;
 class CommentSearch extends CommentModel
 {
     /**
-     *
      * @var int the default page size
      */
     public $pageSize = 10;
