@@ -15,7 +15,6 @@ $this->params['breadcrumbs'][] = Yii::t('yii2mod.comments', 'Update');
 ?>
 <div class="comment-update">
 
-    <h1><?php echo Html::encode($this->title) ?></h1>
 
     <div class="comment-form">
         <?php $form = ActiveForm::begin(); ?>
