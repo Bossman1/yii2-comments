@@ -337,7 +337,8 @@ class CommentModel extends ActiveRecord
      */
     public function getAvatar()
     {
-        if ($this->author->hasMethod('getAvatar')) {
+
+        if ($this->author->hasMethod('getAvatar') && $this->author->getAvatar()) {
             return $this->author->getAvatar();
         }
 
