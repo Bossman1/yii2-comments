@@ -17,8 +17,8 @@ use yii\widgets\Pjax;
 <div class="comment-wrapper" id="<?php echo $commentWrapperId; ?>">
     <?php Pjax::begin(['enablePushState' => false, 'timeout' => 20000, 'id' => $pjaxContainerId]); ?>
     <div class="comments row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <?php if(Yii::$app->user->isGuest): ?>
 
                     <h4>კომენტარის დასაწერად <a href="#" data-toggle="modal" data-target="#login-modal" style="color: green">შედით</a>
@@ -27,7 +27,7 @@ use yii\widgets\Pjax;
 
             <?php endif; ?>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
         <div class="col-md-12 col-sm-12">
             <div class="title-block clearfix">
                 <h3 class="h3-body-title">
