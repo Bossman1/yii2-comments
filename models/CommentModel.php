@@ -315,11 +315,17 @@ class CommentModel extends ActiveRecord
      */
     public function getAuthorName()
     {
-        if ($this->author->hasMethod('getUsername')) {
-            return $this->author->getUsername();
+        if($this->author){
+            if ($this->author->hasMethod('getUsername')) {
+                return $this->author->getUsername();
+            }
+            return $this->author->username;
+        }else{
+            return 'წაშლილი მომხმარებელი';
         }
 
-        return $this->author->username;
+
+
     }
 
     /**
@@ -338,9 +344,12 @@ class CommentModel extends ActiveRecord
     public function getAvatar()
     {
 
-        if ($this->author->hasMethod('getAvatar') && $this->author->getAvatar()) {
-            return $this->author->getAvatar();
+        if($this->author){
+            if ($this->author->hasMethod('getAvatar') && $this->author->getAvatar()) {
+                return $this->author->getAvatar();
+            }
         }
+
 
         return 'http://www.gravatar.com/avatar?d=mm&f=y&s=50';
     }
